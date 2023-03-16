@@ -1,5 +1,5 @@
 
-GKE Mendix Quickstart
+# GKE Mendix Quickstart
 
 
 Create a GKE Cluster
@@ -10,7 +10,8 @@ Deploy a sample Mendix application
 
 
 # Results
-## % kubectl get pods --all-namespaces
+
+## 
   NAMESPACE     NAME                                                             READY   STATUS    RESTARTS   AGE
   default       nginx-example                                                    1/1     Running   0          84m
   kube-system   event-exporter-gke-857959888b-zz55p                              2/2     Running   0          87m
