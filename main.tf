@@ -103,6 +103,11 @@ resource "null_resource" "example" {
   # shell environment running terraform.
   # On failure, this will attempt to execute the false command in the
   # shell environment running terraform.
+
+  triggers = {
+    on_version_change = "${var.revision}"
+  }
+
   provisioner "local-exec" {
     command = ". ./do-all.sh > tout.txt"
   }
