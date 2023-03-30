@@ -1,6 +1,6 @@
 
 variable "revision" {
-  default = 1
+  default = 2
 }
 
 variable "project_id" {
