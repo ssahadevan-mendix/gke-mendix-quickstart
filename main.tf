@@ -45,7 +45,7 @@ variable "cluster_secret" {
 
 variable "certificate_expiration_email" {
   type = string
-  default="sharath.sahadevan@mendix.com"
+  default="s@test.com"
 }
 
 variable "cluster_name" {
