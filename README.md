@@ -2,17 +2,17 @@
 # GKE Mendix Quickstart
 
 
-Create a GKE Cluster
+   Create a GKE Cluster
 
-Deploy nginx
+   Deploy nginx Ingress Controller
 
-Deploy a sample Mendix application
+   Deploy a sample Mendix application
 
-#PreRequisites
+## PreRequisites
   glcoud is set up to access gcp.
   Terraform is installed
 
-# To Run
+## To Execute
 
   terraform init
   terraform plan
