@@ -92,6 +92,7 @@ provider "kubernetes" {
 
 
 
+/* April 13 - Dont need this 
 resource "kubernetes_pod" "nginx-example" {
   metadata {
     name = "nginx-example"
@@ -134,3 +135,4 @@ resource "kubernetes_service" "nginx-example" {
 
  # depends_on = [module.gke]
 }
+*/

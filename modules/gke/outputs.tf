@@ -25,9 +25,16 @@ output "kubernetes_cluster_host" {
 output "kubernetes_access_token" {
   value       = data.google_client_config.default.access_token
   description = "GKE Cluster access token"
+  sensitive = true
 }
 
 output "kubernetes_cluster_cert" {
   value = base64decode(data.google_container_cluster.my_cluster.master_auth[0].cluster_ca_certificate)
   description = "GKE Cluster cert"
+}
+
+# March 27, 2023 - Added Cluster ID 
+output "kubernetes_cluster_id" {
+  value       = data.google_container_cluster.my_cluster.id
+  description = "GKE Cluster id"
 }

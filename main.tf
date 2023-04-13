@@ -67,11 +67,8 @@ module "gke" {
 
 
 provider "kubernetes" {
-  #host                   = "https://${data.google_container_cluster.my_cluster.endpoint}"
   host                   = "https://${module.gke.kubernetes_cluster_host}"
-  #token                  = data.google_client_config.default.access_token
   token                  = "${module.gke.kubernetes_access_token}"
-  #cluster_ca_certificate = base64decode(data.google_container_cluster.my_cluster.master_auth[0].cluster_ca_certificate)
   cluster_ca_certificate = "${module.gke.kubernetes_cluster_cert}"
   #load_config_file       = false
 }
@@ -86,6 +83,21 @@ provider "kubernetes" {
 #}
 
 
+provider "helm" {
+  kubernetes {
+    host                   = "https://${module.gke.kubernetes_cluster_host}"
+    token                  = "${module.gke.kubernetes_access_token}"
+    cluster_ca_certificate = "${module.gke.kubernetes_cluster_cert}"
+    #load_config_file       = false
+  }
+}
+
+resource "helm_release" "ingress-ngnix" {
+  name  = "ingress-nginx"
+  chart = "nginx-stable/nginx-ingress"
+
+  depends_on = [module.gke]
+}
 
 resource "google_service_account" "service_account" {
   account_id   = "terraform-account-id"
@@ -111,32 +123,8 @@ resource "null_resource" "example" {
   provisioner "local-exec" {
     command = ". ./do-all.sh > tout.txt"
   }
-}
-
-/*
-resource "helm_release" "mendix_installer" {
-  name      = "mendixinstaller"
-  chart     = "${path.module}/charts/mendix-installer"
-  namespace = "mendix"
-  values = [
-    templatefile("${path.module}/helm-values/mendix-installer-values.yaml.tpl",
-      {
-        #cluster_name                 = "${module.gke.kubernetes_cluster_name}"
-        cluster_name                 = var.cluster_name
-        account_id                   = var.project_id,
-        cluster_id                   = "${module.gke.kubernetes_cluster_id}",
-        cluster_secret               = sensitive(var.cluster_secret),
-        mendix_operator_version      = var.mendix_operator_version,
-        aws_region                   = var.location,
-        certificate_expiration_email = var.certificate_expiration_email
-        registry_pullurl             = google_container_registry.registry.bucket_self_link,
-        registry_repository          = var.repository_name,
-        registry_iam_role            = "storage.admin",
-        ingress_domainname           = var.domain_name,
-        environments_internal_names  = var.mendix_env_internal_name
-    })
-  ]
-
   depends_on = [module.gke]
 }
-*/
+
+
+
