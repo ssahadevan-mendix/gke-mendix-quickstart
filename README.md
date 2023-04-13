@@ -9,14 +9,14 @@
    Deploy a sample Mendix application
 
 ## PreRequisites
-  glcoud is set up to access gcp.
-  Terraform is installed
+   glcoud is set up to access gcp.
+   Terraform is installed
 
 ## To Execute
 
-  terraform init
-  terraform plan
-  terraform apply --auto-approve
+   terraform init
+   terraform plan
+   terraform apply --auto-approve
 
 ## Results
 
