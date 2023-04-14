@@ -48,4 +48,4 @@
 
 ## Clean up
 
-   terraform destroy
+    terraform destroy
