@@ -18,11 +18,13 @@ tar xvf mxpc-cli-$mendixOperatorVersion-$os.tar.gz
 . ./generate-yamls.sh
 
 
-./mxpc-cli base-install --namespace MENDIX_NAMESPACE -i $MENDIX_CONFIG_IVAL -s $MENDIX_CONFIG_SVAL --clusterMode connected --clusterType generic
+./mxpc-cli base-install --namespace $MENDIX_NAMESPACE -i $MENDIX_CONFIG_IVAL -s $MENDIX_CONFIG_SVAL --clusterMode connected --clusterType generic
 ./mxpc-cli apply-config -i $MENDIX_CONFIG_IVAL -s $MENDIX_CONFIG_SVAL --file configure.yaml
 
 
 ### Deploy the application
 kubectl apply -f demo.yaml
 
+
+. ./validate.sh
 
