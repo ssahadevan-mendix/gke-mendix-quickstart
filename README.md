@@ -36,4 +36,5 @@
     ./validate.sh   Application Url: demo.35.222.165.23.nip.io  #URL to access the Mendix app
 
 
-<div style="width: 640px; height: 480px; margin: 10px; position: relative;"><iframe allowfullscreen frameborder="0" style="width:640px; height:480px" src="https://lucid.app/documents/embedded/8f7aef2a-b088-477b-a70a-08e03092f031" id="s~VOP00Ou4if"></iframe></div>
+## Sequence Diagram
+"https://lucid.app/documents/embedded/8f7aef2a-b088-477b-a70a-08e03092f031" id="s~VOP00Ou4if"
