@@ -17,6 +17,9 @@
     glcoud is set up to access gcp.
     Terraform is installed
 
+## Update env.sh
+    update env.sh
+   
 ## To Execute
 
      update env.sh
@@ -42,3 +45,7 @@
 
     ./validate.sh   Application Url: demo.35.222.165.23.nip.io  #URL to access the Mendix app
 
+
+## Clean up
+
+   terraform destroy
