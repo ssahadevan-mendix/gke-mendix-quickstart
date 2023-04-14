@@ -8,11 +8,18 @@
 
    Deploy a sample Mendix application
 
+## Sequence Diagram
+
+![Sequence Diagram](/images/sequence.png)
+
+
 ## PreRequisites
     glcoud is set up to access gcp.
     Terraform is installed
 
 ## To Execute
+
+     update env.sh
 
      terraform init
      terraform plan
