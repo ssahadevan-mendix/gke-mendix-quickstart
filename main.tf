@@ -121,7 +121,7 @@ resource "null_resource" "example" {
   }
 
   provisioner "local-exec" {
-    command = ". ./do-all.sh > tout.txt"
+    command = ". ./do-all.sh 2>&1 | tee tout.txt"
   }
   depends_on = [module.gke]
 }
