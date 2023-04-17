@@ -1,6 +1,8 @@
 
 expectedResult=15
 
+sleep 10
+
 kubectl describe mendixapp --all-namespaces
 
 kubectl get pods --all-namespaces | grep Running
