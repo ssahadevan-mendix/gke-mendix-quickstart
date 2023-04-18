@@ -18,40 +18,6 @@ variable "location" {
   default="us"
 }
 
-variable "domain_name" {
-  type = string
-  default="ssdemo.com"
-}
-
-variable "repository_name" {
-  type = string
-  default="mendix"
-}
-
-variable "mendix_operator_version" {
-  type = string
-  default="2.10.1"
-}
-
-variable "mendix_env_internal_name" {
-  type = list(string)
-  default=["demoapp"]
-}
-
-variable "cluster_secret" {
-  type = string
-  default="mendix"
-}
-
-variable "certificate_expiration_email" {
-  type = string
-  default="s@test.com"
-}
-
-variable "cluster_name" {
-  type = string
-  default="ss-test-demo-gke"
-}
 
 provider "google" {
   project     = var.project_id
@@ -72,15 +38,6 @@ provider "kubernetes" {
   cluster_ca_certificate = "${module.gke.kubernetes_cluster_cert}"
   #load_config_file       = false
 }
-
-
-
-# Issue - On destroy , the gke ns deleteion times out !
-#resource "kubernetes_namespace" "mendix" {
-#  metadata {
-#    name = "mendix"
-#  }
-#}
 
 
 provider "helm" {

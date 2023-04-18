@@ -1,7 +1,7 @@
 
 expectedResult=15
 
-sleep 10
+sleep 20
 
 kubectl describe mendixapp --all-namespaces
 

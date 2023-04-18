@@ -6,9 +6,6 @@ START=$(date +%s)
 . ./env.sh
 chmod +x *.sh
 
-mendixOperatorVersion=2.10.1
-os=macos-amd64
-
 . ./get-creds.sh
 
 echo https://cdn.mendix.com/mendix-for-private-cloud/mxpc-cli/mxpc-cli-$mendixOperatorVersion-$os.tar.gz

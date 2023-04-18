@@ -26,3 +26,7 @@ export MENDIX_DEMO_MDA="https:\/\/TODO:REPLACE-ME\/Main+line-0.0.0.6.mda"
 
 # Mendix namespace
 export MENDIX_NAMESPACE=mendix
+
+# Used in do-all.sh to download the right mxpc-cli version
+mendixOperatorVersion=2.10.1
+os=macos-amd64
