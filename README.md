@@ -16,6 +16,7 @@
 ## PreRequisites
     glcoud is set up to access gcp.
     Terraform is installed
+    kubectl
 
 ## Update env.sh
     update env.sh
