@@ -12,6 +12,8 @@ echo https://cdn.mendix.com/mendix-for-private-cloud/mxpc-cli/mxpc-cli-$mendixOp
 wget https://cdn.mendix.com/mendix-for-private-cloud/mxpc-cli/mxpc-cli-$mendixOperatorVersion-$os.tar.gz
 tar xvf mxpc-cli-$mendixOperatorVersion-$os.tar.gz
 
+. ./install-grafana-prometheus.sh
+
 . ./generate-yamls.sh
 
 

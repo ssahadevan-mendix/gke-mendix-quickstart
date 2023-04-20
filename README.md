@@ -45,6 +45,8 @@
     ./validate.sh - Success: Number of running demo application pods is         1
 
     ./validate.sh   Application Url: demo.35.222.165.23.nip.io  #URL to access the Mendix app
+    ./validate.sh   Prometheus Url:  35.184.183.116:9090
+
 
 
 ## Clean up

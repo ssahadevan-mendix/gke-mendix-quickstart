@@ -67,11 +67,7 @@ resource "google_container_registry" "registry" {
 }
 
 
-resource "null_resource" "example" {
-  # On success, this will attempt to execute the true command in the
-  # shell environment running terraform.
-  # On failure, this will attempt to execute the false command in the
-  # shell environment running terraform.
+resource "null_resource" "configure" {
 
   triggers = {
     on_version_change = "${var.revision}"
@@ -82,6 +78,3 @@ resource "null_resource" "example" {
   }
   depends_on = [module.gke]
 }
-
-
-
